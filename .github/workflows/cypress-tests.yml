@@ -1,0 +1,30 @@
+name: Run Cypress Tests
+
+# Коли запускати workflow: під час пушу чи pull request
+on:
+  push:
+    branches:
+      - main   # Запуск тестів при пуші в гілку main
+  pull_request:
+    branches:
+      - main
+
+# Які дії виконувати у workflow
+jobs:
+  test:
+    runs-on: ubuntu-latest  # Запускати на останній версії Ubuntu
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2  # Завантажує код репозиторію
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'  # Використовувати Node.js версії 16
+
+      - name: Install dependencies
+        run: npm install  # Встановлює всі залежності з package.json
+
+      - name: Run Cypress tests
+        run: npm run test  # Запускає Cypress тести (припускається, що ви маєте скрипт у package.json для тестування)
