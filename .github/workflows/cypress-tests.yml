@@ -18,9 +18,16 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    # Офіційний екшн для встановлення та запуску Cypress
-    - name: Run Cypress tests
+    # Офіційний екшн для встановлення Cypress
+    - name: Install Cypress
       uses: cypress-io/github-action@v5
       with:
-        start: npm start  # Якщо у вас є скрипт для запуску сервера (якщо необхідно)
-        runTests: true     # Запускає тести після установки
+        install: true  # Встановлює Cypress
+
+    # Переконайтеся, що Cypress має необхідні дозволи
+    - name: Ensure Cypress has executable permissions
+      run: sudo chmod +x ./node_modules/.bin/cypress
+
+    # Запуск тестів Cypress
+    - name: Run Cypress tests
+      run: npm run test
