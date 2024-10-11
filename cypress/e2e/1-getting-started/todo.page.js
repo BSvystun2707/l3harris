@@ -5,7 +5,7 @@ class RegisterPage {
         cy.get('span[class="h-no-underline"]').should('be.visible')
         cy.get('button[aria-label="Open menu popup"]').click();
         cy.wait(1000);
-        cy.contains('button', 'Accept Cookies').click();
+        cy.contains('button', 'Accept All Cookies').click();
         cy.contains('span', 'Company').click({force: true});
     }
 
@@ -15,7 +15,7 @@ class RegisterPage {
         cy.get('span[class="h-no-underline"]').should('be.visible')
         cy.get('button[aria-label="Open menu popup"]').click();
         cy.wait(1000);
-        cy.contains('button', 'Accept Cookies').click();
+        cy.contains('button', 'Accept All Cookies').click();
         cy.contains('span', 'Capabilities').click({force: true});
     }
 
@@ -25,7 +25,7 @@ class RegisterPage {
         cy.get('span[class="h-no-underline"]').should('be.visible')
         cy.get('button[aria-label="Open menu popup"]').click();
         cy.wait(1000);
-        cy.contains('button', 'Accept Cookies').click();
+        cy.contains('button', 'Accept All Cookies').click();
         cy.contains('span', 'Newsroom').click({force: true});
     }
     
