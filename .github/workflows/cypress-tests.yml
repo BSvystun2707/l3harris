@@ -13,10 +13,21 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '16' # або інша версія Node.js
+        node-version: '16' # Або інша версія Node.js, залежно від потреб вашого проєкту
 
     - name: Install dependencies
       run: npm install
 
+    # Офіційний екшн для встановлення Cypress
+    - name: Install Cypress
+      uses: cypress-io/github-action@v5
+      with:
+        install: true  # Встановлює Cypress
+
+    # Переконайтеся, що Cypress має необхідні дозволи
+    - name: Ensure Cypress has executable permissions
+      run: sudo chmod +x ./node_modules/.bin/cypress
+
+    # Запуск тестів Cypress
     - name: Run Cypress tests
       run: npm run test
