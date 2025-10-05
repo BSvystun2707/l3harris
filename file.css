@@ -1,0 +1,65 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  color: white;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main container */
+.container {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 50px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transform: translateY(-50px);
+  animation: slideUp 1s ease-out forwards;
+}
+
+/* Heading with a funky effect */
+h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: #ffec61;
+  animation: bounce 1.5s infinite alternate;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Button styling */
+button {
+  background: #ff61a6;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  color: white;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s;
+}
+
+button:hover {
+  background: #ff3385;
+  transform: scale(1.1);
+}
+
+/* Fancy hover effect fo*
